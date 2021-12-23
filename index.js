@@ -29,3 +29,28 @@ async function getStockInformation(date) {
 }
 
 getStockInformation('5-January-2000');
+
+function inventoryList() {
+  // write your code here
+    let arr = [];
+    
+    function add(name){
+        if(arr.includes(name)  === false){
+            arr.push(name)
+        }
+    }
+    
+    function remove(name){
+        let i  = arr.indexOf(name);
+        if(i !== -1){
+            arr.splice(i,1)
+        }
+    }
+    
+    function getList(){
+        return arr;
+    }
+    
+    return {add, remove, getList}
+    
+}
